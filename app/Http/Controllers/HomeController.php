@@ -16,7 +16,7 @@ class HomeController extends Controller
     }
 
     public function update(Request $id){
-        $barang = DB::table('barang')->where('barang',$id)->get();
+        $barang = DB::table('barang')->like('barang',$id)->get();
         return view("update0255", ['barang' => $barang]);
     }
 
