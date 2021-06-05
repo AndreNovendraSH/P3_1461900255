@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', [HomeController::class, 'index'] );
+
+Route::get('/hal_create', [HomeController::class, 'create'] );
+
+Route::get('/hal_read', [HomeController::class, 'read'] );
+
+Route::get('/hal_update{id}', [HomeController::class, 'update'] );
+
+
+
+
+Route::post('/barang/store', [HomeController::class, 'store'] );
+Route::post('/barang/up', [HomeController::class, 'up'] );
